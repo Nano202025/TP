@@ -12,6 +12,15 @@ def getAllImages():
     # 1) traer un listado de imágenes crudas desde la API (ver transport.py)
     # 2) convertir cada img. en una card.
     # 3) añadirlas a un nuevo listado que, finalmente, se retornará con todas las card encontradas.
+
+    images = transport.getAllImages()
+    cards = []
+    
+    for img in images:
+        cards.append(translator.fromRequestIntoCard(img))
+
+    return cards
+
     pass
 
 # función que filtra según el nombre del pokemon.
@@ -20,8 +29,18 @@ def filterByCharacter(name):
 
     for card in getAllImages():
         # debe verificar si el name está contenido en el nombre de la card, antes de agregarlo al listado de filtered_cards.
-        filtered_cards.append(card)
+        if name.lower() in card.name.lower():
+            filtered_cards.append(card)
 
+    return filtered_cards
+
+def filterFavouritesByCharacter(request, name):
+    filtered_cards = []
+
+    for card in getAllFavourites(request):
+        if name.lower() in card.name.lower():
+            filtered_cards.append(card)
+    
     return filtered_cards
 
 # función que filtra las cards según su tipo.
