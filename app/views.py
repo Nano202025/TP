@@ -1,12 +1,20 @@
 # capa de vista/presentación
 
 from django.shortcuts import redirect, render
+from .layers.transport.transport import getAllImages ##ads##
 from .layers.services import getAllImages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 
 def index_page(request):
     return render(request, 'index.html')
+
+##ads##
+def home(request):
+    images=getAllImages()
+    favourite_list=[]
+    return render(request,'home.html',{'images':images,'favourite_list':favourite_list})
+##ads## 
 
 # esta función obtiene 2 listados: uno de las imágenes de la API y otro de favoritos, ambos en formato Card, y los dibuja en el template 'home.html'.
 def getAllImagesAndFavouriteList(request):
