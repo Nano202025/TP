@@ -1,6 +1,5 @@
 # capa de servicio/lógica de negocio
 
-from flask import redirect
 from ..transport import transport
 from ...config import config
 from ..persistence import repositories

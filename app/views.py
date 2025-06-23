@@ -33,11 +33,12 @@ def search(request):
         return redirect('home')  # si está vacío, volvemos a home
 
     images = services.filterByCharacter(name)
-    favourite_list = services.getAllFavourites(request) if request.user.is_authenticated else []
+    favourites = Favourite.objects.filter(user=request.user) if request.user.is_authenticated else []
+    favourite_list_names = [f.name for f in favourites]
 
     return render(request, 'home.html', {
         'images': images,
-        'favourite_list': favourite_list
+        'favourite_list_names': favourite_list_names
     })
 
 
@@ -48,9 +49,14 @@ def filter_by_type(request):
 
     if type != '':
         images = services.filterByType(type) # debe traer un listado filtrado de imágenes, segun si es o contiene ese tipo.
-        favourite_list = services.getAllFavourites(request) if request.user.is_authenticated else []
+        
+        favourites = Favourite.objects.filter(user=request.user) if request.user.is_authenticated else []
+        favourite_list_names = [f.name for f in favourites]
 
-        return render(request, 'home.html', { 'images': images, 'favourite_list': favourite_list })
+        return render(request, 'home.html', { 
+            'images': images, 
+            'favourite_list_names': favourite_list_names
+ })
     else:
         return redirect('home')
 

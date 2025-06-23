@@ -173,7 +173,7 @@ table.table td i {
     display: flex;
     justify-content: center;
     align-items: center;     
-    gap: 1rem;           
+    gap: 1rem;
 }
 
 .nav-link {
@@ -265,8 +265,10 @@ table.table td i {
     font-size: 35px;
     color: rgb(0, 0, 0);
     background-image: url('/static/images/background.jpg');
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
 }
 
 .index-page h2{
@@ -288,7 +290,7 @@ table.table td i {
 
 .inputbuscar{
     background: linear-gradient(to right, #5f9dc7, #6dd5fa, #ffffff);
-    border: #2B58A7 1.5px solid;
+    border: #2B58A7 2px solid;
     border-radius: 10px;
 }
 
@@ -304,7 +306,7 @@ table.table td i {
     font-size: 35px;
     color: rgb(0, 0, 0);
     min-height: 75px;
-    background-color: #00ffe1;
+    background-color: rgb(255, 0, 0);
 }
 
 .badge-type {
@@ -380,4 +382,33 @@ table.table td i {
     border-radius: 10px;
     color: #f6ff00;
     letter-spacing: 0.1em;
+}
+
+.login-form{
+    background-image: url('/static/images/favoritos.jpg');
+    background-size: cover;
+    background-repeat: repeat-y;
+    background-position: center;
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+
+.login-form h2{
+    font-weight: 400;
+  font-size: 3.4rem;
+  color: #FFD800;
+  text-shadow:
+    -4px -4px 0 #2B58A7,  
+    4px -4px 0 #2B58A7,
+    -4px 4px 0 #2B58A7,
+    4px 4px 0 #2B58A7,
+    0 0 25px #00000088; 
+  letter-spacing: 0.05em;
+  margin-bottom: 40px;
+}
+
+.login-form form  .form-group input{
+    background: linear-gradient(to right, #5f9dc7, #6dd5fa, #ffffff);
+    border: #2B58A7 1.5px solid;
+    border-radius: 10px;
 }
