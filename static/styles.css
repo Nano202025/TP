@@ -2,6 +2,7 @@ body {
     color: #566787;
     background: #f5f5f5;
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 
 .table-responsive {
@@ -139,4 +140,17 @@ table.table td i {
     float: left;
     margin-top: 6px;
     font-size: 95%;
+}
+
+.border-purple {
+    border: 1px solid purple;
+}
+.border-brown {
+    border: 1px solid brown
+}
+.border-gray {
+    border: 1px solid gray
+}
+.border-ground {
+    border: 1px solid black
 }
